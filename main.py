@@ -26,7 +26,8 @@ class LSystem(QMainWindow):
         if self.do_paint:
             self.qpaint = QtGui.QPainter()
             self.qpaint.begin(self)
-            self.qpaint.setBrush(QtGui.QColor(255, 255, 0))
+            self.qpaint.setBrush(QtGui.QColor(random.randint(0, 255), random.randint(0, 255),
+                                              random.randint(0, 255)))
             for i in range(random.randint(1, 10)):
                 o = random.randint(3, self.height())
                 self.qpaint.drawRoundedRect(random.randint(0, self.height()), random.randint(0, self.width()), o,
