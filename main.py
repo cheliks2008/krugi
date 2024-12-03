@@ -4,17 +4,17 @@ import random
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtWidgets import QMainWindow
 from PyQt6 import QtGui
-from PyQt6 import uic
+from UI import Ui_MainWindow
 
 
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
 
-class LSystem(QMainWindow):
+class LSystem(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("UI.ui", self)
+        self.setupUi(self)
         self.do_paint = False
         self.pushButton.clicked.connect(self.yl)
 
